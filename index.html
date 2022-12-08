@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en" class="h-100">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -21,36 +21,36 @@
     
     <!-- Custom styles for this template -->
     <link href="style.css" rel="stylesheet">
-  </head>
+</head>
 
-  <body class="bg-light">
+<body class="bg-light">
 
-    
-
-<div class="banner-wrap vh-100 vw-100 text-white">
-
-  <div class="overlay"></div>
-
-  <header class="px-5 p-3 text-white text-center">
+<header class="px-5 p-3 text-white text-center fixed-top scrolling">
         <div>
-          <h3 class="float-md-start mb-0">Portfolio</h3>
-          <nav class="nav nav-masthead justify-content-center float-md-end">
-            <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home</a>
-            <a class="nav-link fw-bold py-1 px-0" href="#">Features</a>
-            <a class="nav-link fw-bold py-1 px-0" href="#">Contact</a>
-          </nav>
+            <h3 class="float-md-start mb-0">Portfolio</h3>
+            <nav class="nav nav-masthead justify-content-center float-md-end">
+              <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home</a>
+              <a class="nav-link fw-bold py-1 px-0" href="#about-us">About</a>
+              <a class="nav-link fw-bold py-1 px-0" href="#projects">Projects</a>
+              <a class="nav-link fw-bold py-1 px-0" href="#contact-me">Contact Me</a>
+            </nav>
         </div>
-      </header>  
+</header> 
+    
+  <div class="banner-wrap vh-100 vw-100 d-flex align-items-center justify-content-center text-white">
 
-    <main class="d-flex flex-column align-items-center justify-content-center v-50 h-75 text-center">
-      <h1 class="display-1">I am Leigh Scheepers</h1>
-      <p class="lead">Fullstack Developer, Marketing Honours from UCT, Sales Person and Social Media Manager.</p>
-      
-    </main>
+    <div class="overlay"></div>
 
-</div>
+      <main class="text-center">
 
-<section>
+        <h1 class="display-1">I am Leigh Scheepers</h1>
+        <span id="typed" class="lead"></span>
+          
+      </main>
+
+  </div>
+
+<section id="about-us">
   <div class="container p-5">
     <div class="card">
       <div class="card-body">
@@ -107,7 +107,7 @@
 
 </section>
 
-<section>
+<section id="projects">
   <div class="container">
     <h1 class="text-center p-3"><mark>Projects</mark></h1>
 
@@ -132,7 +132,7 @@
   </div>
 </section>
     
-<section>
+<section id="contact-me">
   <div class="container p-5">
     <div class="card p-3">
       <div class="card-body px-5 text-center">
@@ -147,31 +147,58 @@
          
         </p>
 
-        <form>
-          <div class="mb-3">
-            <input type="text" class="form-control" id="name" placeholder="Name">
-          </div>
-          <div class="mb-3">
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address">
-          </div>
-          <div class="mb-3">
-            <input type="text" class="form-control" id="subject" aria-describedby="emailHelp" placeholder="Subject of Message">
-          </div>
-          <div class="mb-3">
+        <div class="row justify-content-center mt-3">
+          <div class="col-md-6 col-sm-12">
+            <form>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="name">
+                <label for="name">Name</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp">
+                <label for="InputEmail">Email Address</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="subject" aria-describedby="emailHelp">
+                <label for="subject">Subject</label>
+              </div>
+              <div class="form-floating mb-3">
 
-            <textarea class="form-control" placeholder="Enter Message Here" id="floatingTextarea"></textarea>
-          
+                <textarea class="form-control" id="Textarea"></textarea>
+                <label for="Textarea">Enter message here</label>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
           </div>
-          
-          <div class="mb-3 form-check">
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
 
       </div>
     </div>
   </div>
 </section>
 
-  </body>
+<footer class="bg-dark text-center text-white">
+  <div class="container p-3">
+    <p>Developed by Leigh Scheepers for Zaio Bootstrap Course, using Bootstrap.</p>
+  </div>
+</footer>
+
+  <script>
+    window.addEventListener("scroll", () => {
+      const header = document.querySelector("header")
+      header.classList.toggle("scrolling", window.scrollY > 0)
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typed = new Typed('#typed', {
+      strings: ['Fullstack Developer.', 'Marketing Honours UCT Graduate.', 'Aspiring Poet.'],
+      loop: true,
+      typeSpeed: 15,
+    });
+  </script>
+  
+</body>
 </html>
